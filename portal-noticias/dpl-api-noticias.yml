@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-noticias
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api-noticias
+  template:
+    metadata:
+      labels:
+        app: api-noticias
+    spec:
+      containers:
+      - name: api-noticias
+        image: aluracursos/sistema-noticias:1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
