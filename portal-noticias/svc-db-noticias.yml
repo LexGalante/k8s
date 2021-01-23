@@ -7,4 +7,5 @@ spec:
   selector:
     app: db-noticias
   ports:
-  - port: 3306
+    - port: 3306
+  
